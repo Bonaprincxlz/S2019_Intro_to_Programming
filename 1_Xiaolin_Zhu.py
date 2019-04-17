@@ -19,7 +19,7 @@ print(len(my_dict['baz'][2]))
 # c) Extract just the last two elements from the list under the 'baz' key.  In comments, explain why the result
 #    is the values you see.
 print(my_dict['baz'][-2:])
-# True and False returns boolean False , 1 does not equal 4 boolean False
+# True and False returns boolean False , 1 does not equal to 4, which returns boolean False
 
 # d) Replace the first two elements in the object under the 'bar' key with 'dog' and 'cat'.
 my_dict['bar'][:2] = ['dog', 'cat']
@@ -107,12 +107,15 @@ print(mean)
 
 # median
 my_list.sort()
-p = len(my_list)
-s = p//2
-if p % 2 == 0:
-    print('median is', (my_list[s-1] + my_list[s])/2)
-else:
-    print('median is', my_list[s])
+s = 0
+med = 0
+for i,v in enumerate(my_list):
+    if i == len(my_list)/2 or i == (len(my_list)/2)-1:
+        s = s + v
+        med = s / 2
+    else:
+        med = my_list[int(len(my_list)/2)]
+print(med)
 
 # max
 maxi = my_list[0]
@@ -120,7 +123,7 @@ i = 0
 while i < len(my_list):
     if maxi < my_list[i]:
         maxi = my_list[i]
-    i = i + 1
+        i = i + 1
 print('max is', maxi)
 
 # min
@@ -129,7 +132,7 @@ i = 0
 while i < len(my_list):
     if mini > my_list[i]:
         mini = my_list[i]
-    i = i + 1
+        i = i + 1
 print('min is', mini)
 
 # numpy
